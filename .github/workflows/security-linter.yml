@@ -18,28 +18,23 @@ jobs:
         with:
           python-version: 3.12.9
 
-      - name: Create friend-repo directory
-        run: mkdir -p friend-repo
-
       - name: Clone my friend's repository
         run: |
           git clone --single-branch https://github.com/Keracles/VulnerabilityDetectionPackage.git
-        working-directory: ./friend-repo
 
       - name: Install Git LFS and pull models
         run: |
           sudo apt update && sudo apt install git-lfs -y
-          cd ./friend-repo
+          cd ./VulnerabilityDetectionPackage
           git lfs install
           git lfs pull
 
       - name: Install VulDe package
         run: |
-          cd ./friend-repo
-          ls -la
+          cd ./VulnerabilityDetectionPackage/vulde
           pip install -e .
 
       - name: Run VulDe Linter on my file (test.py)
         run: |
-          cd ./friend-repo
+          cd ./VulnerabilityDetectionPackage
           python analyseur.py ../test.py test --display-risk-level LOW --fail-on-risk-level HIGH
