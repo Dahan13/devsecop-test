@@ -25,7 +25,7 @@ jobs:
       - name: Pull models
         run: |
           wget https://p5qshw.db.files.1drv.com/y4mtWQF9heecoSfG9AypEg6ExBgh-dbLg14KguuLQmRc-9rd60XanP1uioiZ431Edu0CdryObt5WGXo2yMOsTe2FNuopc-p7ZNa3KYkWfswbgyRc7iyz898xy8MJBPttCWCgvrogCc9iigHpKY4xC2m5MNPxMPaPOUlgfDCTwaBseJU4i3FltV7gRPpn-Q2Emfw7cQIQ-MA_JP5iHcYm7-sfOAyfVGb1VkdIxSM336xeAk?AVOverride=1 -O models.zip
-          unzip models.zip -d ./VulnerabilityDetectionPackage/vulde/vulde/models
+          unzip -o models.zip -d ./VulnerabilityDetectionPackage/vulde/vulde/models
 
       - name: Install VulDe package
         run: |
