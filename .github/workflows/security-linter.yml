@@ -1,0 +1,41 @@
+name: VulDe Security Linter
+
+on:
+  push:
+    paths:
+      - '**.py'
+
+jobs:
+  vuln-linter:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12.9
+
+      - name: Clone my friend's repository
+        run: |
+          git clone --single-branch https://github.com/Keracles/VulnerabilityDetectionPackage.git
+        working-directory: ./friend-repo
+
+      - name: Install Git LFS and pull models
+        run: |
+          sudo apt update && sudo apt install git-lfs -y
+          cd ./friend-repo
+          git lfs install
+          git lfs pull
+
+      - name: Install VulDe package
+        run: |
+          cd ./friend-repo/vulde
+          pip install -e .
+
+      - name: Run VulDe Linter on my file (test.py)
+        run: |
+          cd ./friend-repo
+          python analyseur.py ../test.py test --display-risk-level LOW --fail-on-risk-level HIGH
