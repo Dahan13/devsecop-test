@@ -22,12 +22,10 @@ jobs:
         run: |
           git clone --single-branch https://github.com/Keracles/VulnerabilityDetectionPackage.git
 
-      - name: Install Git LFS and pull models
+      - name: Pull models
         run: |
-          sudo apt update && sudo apt install git-lfs -y
-          cd ./VulnerabilityDetectionPackage
-          git lfs install
-          git lfs pull
+          wget https://p5qshw.db.files.1drv.com/y4mtWQF9heecoSfG9AypEg6ExBgh-dbLg14KguuLQmRc-9rd60XanP1uioiZ431Edu0CdryObt5WGXo2yMOsTe2FNuopc-p7ZNa3KYkWfswbgyRc7iyz898xy8MJBPttCWCgvrogCc9iigHpKY4xC2m5MNPxMPaPOUlgfDCTwaBseJU4i3FltV7gRPpn-Q2Emfw7cQIQ-MA_JP5iHcYm7-sfOAyfVGb1VkdIxSM336xeAk?AVOverride=1 -O models.zip
+          unzip models.zip -d ./VulnerabilityDetectionPackage/vulde/vulde/models
 
       - name: Install VulDe package
         run: |
