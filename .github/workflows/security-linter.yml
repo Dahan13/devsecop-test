@@ -24,8 +24,8 @@ jobs:
 
       - name: Pull models
         run: |
-          wget https://p5qshw.db.files.1drv.com/y4mIcJt5eiuUBdZKOXw9P4Pi7luxVeeK92hErkdwNapM-vGcThV7XcSlhTkfTkX_BR5RXtYA6AYAU5jC9Etuz7th-xuTAC5UguzZsYJM-pJZv6wiXEuKZ6UKvMwpTJXnwOhkS-muEId_XPdjCdgWVFze3ABomeQBeVaEuxR8civyvOhzXnzNByDPvXEdu9mdyZjH3qfddlf0_WRsZFIAIAZuhX3UAzzswvUUQkggoSiYX4?AVOverride=1 -O models.zip
-          unzip -o models.zip -d ./VulnerabilityDetectionPackage/vulde/vulde/models
+          wget https://p5qshw.db.files.1drv.com/y4mIcJt5eiuUBdZKOXw9P4Pi7luxVeeK92hErkdwNapM-vGcThV7XcSlhTkfTkX_BR5RXtYA6AYAU5jC9Etuz7th-xuTAC5UguzZsYJM-pJZv6wiXEuKZ6UKvMwpTJXnwOhkS-muEId_XPdjCdgWVFze3ABomeQBeVaEuxR8civyvOhzXnzNByDPvXEdu9mdyZjH3qfddlf0_WRsZFIAIAZuhX3UAzzswvUUQkggoSiYX4?AVOverride=1
+          mv word2vec_model.bin ./VulnerabilityDetectionPackage/vulde/vulde/models/word2vec_model.bin
 
       - name: Install VulDe package
         run: |
