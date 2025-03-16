@@ -36,6 +36,7 @@ jobs:
       - name: Install VulDe package
         run: |
           cd ./friend-repo
+          ls -la
           pip install -e .
 
       - name: Run VulDe Linter on my file (test.py)
