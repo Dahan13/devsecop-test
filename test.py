@@ -22,3 +22,4 @@ def vulnerable_view(request):
     """
     return HttpResponse(html)
 
+ 

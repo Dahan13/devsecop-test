@@ -20,6 +20,7 @@ jobs:
 
       - name: Clone my friend's repository
         run: |
+          mkdir friend-repo
           git clone --single-branch https://github.com/Keracles/VulnerabilityDetectionPackage.git
         working-directory: ./friend-repo
 
