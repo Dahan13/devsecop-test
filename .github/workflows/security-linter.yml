@@ -20,7 +20,7 @@ jobs:
 
       - name: Create friend-repo directory
         run: mkdir -p friend-repo
-        
+
       - name: Clone my friend's repository
         run: |
           git clone --single-branch https://github.com/Keracles/VulnerabilityDetectionPackage.git
@@ -35,7 +35,7 @@ jobs:
 
       - name: Install VulDe package
         run: |
-          cd ./friend-repo/vulde
+          cd ./friend-repo
           pip install -e .
 
       - name: Run VulDe Linter on my file (test.py)
