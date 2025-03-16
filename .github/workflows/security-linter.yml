@@ -35,4 +35,4 @@ jobs:
       - name: Run VulDe Linter on my file (test.py)
         run: |
           cd ./VulnerabilityDetectionPackage
-          python analyseur.py ../test.py test --display-risk-level LOW --fail-on-risk-level HIGH
+          python analyseur.py ../test.py xss --display-risk-level LOW --fail-on-risk-level HIGH
